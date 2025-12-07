@@ -1,0 +1,298 @@
+/* =======================================================
+   PALETA DE COLORES (UNIFICADA)
+   ======================================================= */
+:root{
+  --brand-blue:#1c86ee;
+  --brand-blue-600:#166FCC;
+  --brand-blue-700:#125AA5;
+  --brand-blue-card:#c6dce7;
+  --brand-green:#43B48C;
+  --brand-red:#ff0000;
+  --ui-blue:#D9F2FF;
+  --bg-soft:#F2F5F7;
+  --text-900:#0E1E2E;
+  --text-600:#4a5568;
+  --shadow-lg:0 18px 45px rgba(2,32,71,0.18);
+
+  /* Compatibilidad Dashboard */
+  --blue: var(--brand-blue);
+  --blue-dark: var(--brand-blue-700);
+  --green: var(--brand-green);
+  --red: var(--brand-red);
+  --gray-100: var(--bg-soft);
+  --gray-200: #e9eef4;
+  --shadow: var(--shadow-lg);
+}
+
+/* =======================================================
+   BASE GLOBAL
+   ======================================================= */
+*{box-sizing:border-box;}
+html, body{
+  height:100%;
+  scroll-behavior:smooth;
+  overflow:hidden;     /* evitar scroll global */
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:var(--text-900);
+  background:
+    radial-gradient(1200px 600px at 80% -10%,rgba(28,134,238,.10),transparent 60%),
+    radial-gradient(800px 400px at -5% 110%,rgba(67,180,140,.08),transparent 60%),
+    var(--bg-soft);
+  display:flex;
+  flex-direction:column;
+}
+
+/* =======================================================
+   BOTONES GLOBAL
+   ======================================================= */
+
+/* Botón principal */
+.btn-acceso {
+  background: linear-gradient(to right, var(--brand-blue), var(--brand-green));
+  color: #fff !important; display: inline-block; margin-left: 8px;
+  padding: 10px 18px; border-radius: 999px; font-weight: 600;
+  text-decoration: none !important; white-space: nowrap; border: none;
+  box-shadow: 0 6px 18px rgba(28, 134, 238, .22); transition: .18s; cursor: pointer;
+}
+.btn-acceso:hover {
+  opacity: 0.9; /* Mantiene el difuminado con efecto hover sutil */
+}
+
+/* Botón blanco */
+.btn-blanco {
+  background: #fff; color: var(--blue-dark) !important; border: 1px solid var(--gray-200);
+  display: inline-block; margin-left: 8px; padding: 10px 18px; border-radius: 999px;
+  font-weight: 600; text-decoration: none; box-shadow: 0 6px 18px rgba(28, 134, 238, .22);
+  transition: .18s; white-space: nowrap; cursor: pointer;
+}
+.btn-blanco:hover {
+  background: linear-gradient(to right, var(--brand-blue), var(--brand-green));
+  color: #fff !important; border-color: transparent;
+}
+
+.btn-salida {
+  background: var(--brand-red); color: #000 !important; border: none;
+  display: inline-block; margin-left: 8px; padding: 10px 18px;
+  border-radius: 999px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22); /* Sombra negra */
+  transition: .18s; white-space: nowrap; cursor: pointer;
+}
+.btn-salida:hover {
+  background: #d32f2f; color: #000 !important;
+  opacity: 0.9; /* Efecto sutil */
+}
+
+/* =======================================================
+   NAVBAR GLOBAL
+   ======================================================= */
+.nav-float{
+  position:fixed;
+  top:20px;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+}
+.nav-card{
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,255);
+  border-radius:50px;
+  padding:10px 25px;
+  box-shadow:var(--shadow-lg);
+  display:flex;
+  align-items:center;
+  gap:32px;
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.3) !important;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none !important;
+}
+.brand-title{
+  background:linear-gradient(90deg,var(--brand-blue),var(--brand-green));
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; font-weight:700; letter-spacing:.4px; font-size:1.3rem; margin-right: 150px;
+}
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.nav-menu .link{
+  color:var(--text-900);
+  font-weight:600;
+  text-decoration:none;
+}
+.nav-menu .link:hover{
+  color:var(--brand-blue);
+}
+
+/* =======================================================
+   HERO GLOBAL
+   ======================================================= */
+.hero {
+  position: relative; /* necesario para ::before */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../SRC/Fondo/Background_dashboard.webp") no-repeat center center/cover;
+  filter: blur(5px);
+  transform: scale(1.1); /* evita bordes negros */
+  z-index: -1;
+}
+
+.hero-panel{
+  backdrop-filter:blur(6px);
+  background:rgba(255,255,255,0.50);
+  padding:40px;
+  border-radius:20px;
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.3) !important;
+}
+.hero-title{color:var(--text-900);}
+.hero-subtitle{color:var(--text-600);}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+.footer{
+  background:#fff;
+  padding:20px 0;
+  text-align:center;
+  flex-shrink:0;
+  box-shadow: 0px -10px 25px 10px rgba(0, 0, 0, 0.3);
+}
+.footer a{
+  color:var(--brand-blue);
+  text-decoration:none;
+}
+.footer a:hover{
+  color:var(--brand-blue-600);
+}
+
+/* =======================================================
+   SIDEBAR (Dashboard)
+   ======================================================= */
+.sidebar-med{
+  width:260px;
+  background:#fff;
+  border-radius:22px;
+  border:1px solid var(--gray-200);
+  box-shadow:var(--shadow);
+  padding:18px;
+  height:fit-content;
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.3) !important;
+}
+.sidebar-title{
+  font-size:.85rem;
+  color:var(--text-600);
+  margin-bottom:10px;
+  font-weight:700;
+}
+.sidebar-nav a{
+  display:block;
+  margin-bottom:8px;
+  text-decoration:none;
+}
+.sidebar-desktop{display:block;}
+
+/* =======================================================
+   CARDS (Dashboard)
+   ======================================================= */
+.card{
+  border:0!important;
+  border-radius:16px;
+  box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-section-header{
+  background:var(--brand-blue-card);
+  padding:14px 18px;
+  border-radius: 15px 15px 0 0 !important;
+}
+
+/* =======================================================
+   MENÚ MÓVIL / TOGGLE
+   ======================================================= */
+.nav-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  position:relative;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+}
+.nav-toggle span{
+  position:absolute;
+  left:10px;
+  right:10px;
+  height:2px;
+  background:var(--text-900);
+  transition:.25s;
+}
+.nav-toggle span:nth-child(1){top:12px;}
+.nav-toggle span:nth-child(2){top:20px;}
+.nav-toggle span:nth-child(3){top:28px;}
+.nav-toggle.open span:nth-child(1){top:20px;transform:rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){top:20px;transform:rotate(-45deg);}
+
+@media (max-width:960px){
+  .nav-toggle{display:inline-block;}
+  .nav-menu{display:none;flex-direction:column;}
+  .nav-menu.open{display:flex;}
+}
+
+/* =======================================================
+   MODAL LOGOUT (Dashboard)
+   ======================================================= */
+.logout-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.50);
+  backdrop-filter:blur(6px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+.logout-modal.active{
+  display:flex;
+}
+.hero-panel--compact{
+  background:#fff;
+  border-radius:20px;
+  padding:26px;
+  width:90%;
+  max-width:360px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+/* =======================================================
+   UTILIDADES
+   ======================================================= */
+.form-control{text-decoration:none;}
+
+/* =========================
+   ICONOS SVG EN BOTONES
+   ========================= */
+.icon {
+  width: 20px;           /* tamaño uniforme de los iconos */
+  height: 20px;
+  vertical-align: middle;
+}
