@@ -2,8 +2,6 @@ Modifica solo el script de conexion.php, coloca tu contraseña de la base de dat
 
 Credenciales de login:
 
-Administrador:
-
 administrador@flemming.com = administrador
 recepcionista@flemming.com = recepcionista
 medico@flemming = medico
